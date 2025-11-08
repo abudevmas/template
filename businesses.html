@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Hub - Business Directory</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            const STORAGE_KEY = 'theme';
+            const prefersDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+            const savedTheme = localStorage.getItem(STORAGE_KEY);
+            const initialTheme = savedTheme || ((prefersDark && prefersDark.matches) ? 'dark' : 'light');
+
+            document.documentElement.setAttribute('data-theme', initialTheme);
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.svg" alt="Community Hub Logo">
+                <span>Community Hub</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="businesses.html" class="active">Businesses</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" class="theme-switch">
+                <label for="theme-switch" class="theme-label">
+                    <span class="theme-icon">🌙</span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Directory of Local Businesses</h1>
+                <p>Support local businesses in our community</p>
+            </div>
+        </section>
+
+        <section class="businesses-section">
+            <div class="container">
+                <!-- Restaurants -->
+                <div class="business-category">
+                    <h2 class="category-title category-restaurant">🍴 Restaurants & Cafés</h2>
+                    <div class="business-grid">
+                        <div class="business-card restaurant-type">
+                            <div class="business-logo">
+                                <div class="logo-placeholder">☕</div>
+                            </div>
+                            <h3 class="business-name">Corner Café</h3>
+                            <p class="business-description">Cozy neighborhood café serving fresh coffee, pastries, and light meals. Family-owned for over 20 years.</p>
+                            <div class="business-info">
+                                <p><strong>Address:</strong> 123 Main Street</p>
+                                <p><strong>Phone:</strong> (555) 123-4567</p>
+                                <p><strong>Hours:</strong> Mon-Sun 7AM-6PM</p>
+                            </div>
+                        </div>
+
+                        <div class="business-card restaurant-type">
+                            <div class="business-logo">
+                                <div class="logo-placeholder">🍝</div>
+                            </div>
+                            <h3 class="business-name">Mama's Italian Kitchen</h3>
+                            <p class="business-description">Authentic Italian cuisine with homemade pasta and traditional recipes passed down through generations.</p>
+                            <div class="business-info">
+                                <p><strong>Address:</strong> 456 Oak Avenue</p>
+                                <p><strong>Phone:</strong> (555) 234-5678</p>
+                                <p><strong>Hours:</strong> Tue-Sun 11AM-10PM</p>
+                            </div>
+                        </div>
+
+                        <div class="business-card restaurant-type">
+                            <div class="business-logo">
+                                <div class="logo-placeholder">🌮</div>
+                            </div>
+                            <h3 class="business-name">El Rancho Mexican Grill</h3>
+                            <p class="business-description">Traditional Mexican dishes with fresh ingredients and a vibrant atmosphere. Vegetarian options available.</p>
+                            <div class="business-info">
+                                <p><strong>Address:</strong> 789 Elm Street</p>
+                                <p><strong>Phone:</strong> (555) 345-6789</p>
+                                <p><strong>Hours:</strong> Mon-Sat 11AM-9PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Retail -->
+                <div class="business-category">
+                    <h2 class="category-title category-retail">🛍️ Retail & Shops</h2>
+                    <div class="business-grid">
+                        <div class="business-card retail-type">
+                            <div class="business-logo">
+                                <div class="logo-placeholder">📚</div>
+                            </div>
+                            <h3 class="business-name">Bookworm's Paradise</h3>
+                            <p class="business-description">Independent bookstore offering new and used books, reading accessories, and author events. A haven for book lovers!</p>
+                            <div class="business-info">
+                                <p><strong>Address:</strong> 321 Maple Drive</p>
+                                <p><strong>Phone:</strong> (555) 456-7890</p>
+                                <p><strong>Hours:</strong> Mon-Sat 9AM-7PM, Sun 11AM-5PM</p>
+                            </div>
+                        </div>
+
+                        <div class="business-card retail-type">
+                            <div class="business-logo">
+                                <div class="logo-placeholder">👕</div>
+                            </div>
+                            <h3 class="business-name">Thread & Style Boutique</h3>
+                            <p class="business-description">Curated fashion boutique featuring local designers and unique clothing, accessories, and gifts.</p>
+                            <div class="business-info">
+                                <p><strong>Address:</strong> 654 Pine Street</p>
+                                <p><strong>Phone:</strong> (555) 567-8901</p>
+                                <p><strong>Hours:</strong> Mon-Sat 10AM-7PM</p>
+                            </div>
+                        </div>
+
+                        <div class="business-card retail-type">
+                            <div class="business-logo">
+                                <div class="logo-placeholder">🔧</div>
+                            </div>
+                            <h3 class="business-name">Hometown Hardware</h3>
+                            <p class="business-description">Full-service hardware store with knowledgeable staff, tools, supplies, and expert advice for all your projects.</p>
+                            <div class="business-info">
+                                <p><strong>Address:</strong> 987 Cedar Lane</p>
+                                <p><strong>Phone:</strong> (555) 678-9012</p>
+                                <p><strong>Hours:</strong> Mon-Sat 7AM-8PM, Sun 9AM-5PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="business-category">
+                    <h2 class="category-title category-service">💼 Professional Services</h2>
+                    <div class="business-grid">
+                        <div class="business-card service-type">
+                            <div class="business-logo">
+                                <div class="logo-placeholder">✂️</div>
+                            </div>
+                            <h3 class="business-name">Style & Cut Salon</h3>
+                            <p class="business-description">Full-service salon offering haircuts, styling, coloring, and spa treatments. Walk-ins welcome!</p>
+                            <div class="business-info">
+                                <p><strong>Address:</strong> 147 Birch Avenue</p>
+                                <p><strong>Phone:</strong> (555) 789-0123</p>
+                                <p><strong>Hours:</strong> Tue-Sat 9AM-6PM</p>
+                            </div>
+                        </div>
+
+                        <div class="business-card service-type">
+                            <div class="business-logo">
+                                <div class="logo-placeholder">💼</div>
+                            </div>
+                            <h3 class="business-name">Community Law Offices</h3>
+                            <p class="business-description">Experienced legal services specializing in family law, estate planning, and business matters. Free consultations available.</p>
+                            <div class="business-info">
+                                <p><strong>Address:</strong> 258 Walnut Street</p>
+                                <p><strong>Phone:</strong> (555) 890-1234</p>
+                                <p><strong>Hours:</strong> Mon-Fri 8AM-5PM</p>
+                            </div>
+                        </div>
+
+                        <div class="business-card service-type">
+                            <div class="business-logo">
+                                <div class="logo-placeholder">🏥</div>
+                            </div>
+                            <h3 class="business-name">Green Valley Dental Care</h3>
+                            <p class="business-description">Family-friendly dental practice offering preventive care, cleanings, and cosmetic dentistry services.</p>
+                            <div class="business-info">
+                                <p><strong>Address:</strong> 369 Spruce Drive</p>
+                                <p><strong>Phone:</strong> (555) 901-2345</p>
+                                <p><strong>Hours:</strong> Mon-Thu 8AM-5PM, Fri 8AM-2PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health & Fitness -->
+                <div class="business-category">
+                    <h2 class="category-title category-health">💪 Health & Fitness</h2>
+                    <div class="business-grid">
+                        <div class="business-card health-type">
+                            <div class="business-logo">
+                                <div class="logo-placeholder">🧘</div>
+                            </div>
+                            <h3 class="business-name">Zen Yoga Studio</h3>
+                            <p class="business-description">Peaceful yoga studio offering classes for all levels, meditation sessions, and wellness workshops.</p>
+                            <div class="business-info">
+                                <p><strong>Address:</strong> 741 Willow Way</p>
+                                <p><strong>Phone:</strong> (555) 012-3456</p>
+                                <p><strong>Hours:</strong> Mon-Fri 6AM-9PM, Sat-Sun 8AM-6PM</p>
+                            </div>
+                        </div>
+
+                        <div class="business-card health-type">
+                            <div class="business-logo">
+                                <div class="logo-placeholder">🏋️</div>
+                            </div>
+                            <h3 class="business-name">FitLife Gym</h3>
+                            <p class="business-description">Modern fitness facility with state-of-the-art equipment, personal training, and group fitness classes.</p>
+                            <div class="business-info">
+                                <p><strong>Address:</strong> 852 Aspen Boulevard</p>
+                                <p><strong>Phone:</strong> (555) 123-4568</p>
+                                <p><strong>Hours:</strong> Mon-Fri 5AM-11PM, Sat-Sun 7AM-9PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Community Hub. All rights reserved.</p>
+            <p>Building stronger communities, one connection at a time.</p>
+        </div>
+    </footer>
+    <script>
+        // Theme toggle functionality - Initialize immediately
+        (function() {
+            const html = document.documentElement;
+            const STORAGE_KEY = 'theme';
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+            const savedTheme = localStorage.getItem(STORAGE_KEY);
+
+            const getSystemTheme = () => (prefersDark.matches ? 'dark' : 'light');
+
+            const applyTheme = (theme, persist = true) => {
+                html.setAttribute('data-theme', theme);
+                if (persist) {
+                    localStorage.setItem(STORAGE_KEY, theme);
+                }
+            };
+
+            applyTheme(savedTheme || getSystemTheme(), false);
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const themeSwitch = document.getElementById('theme-switch');
+
+                if (!themeSwitch) {
+                    return;
+                }
+
+                themeSwitch.checked = html.getAttribute('data-theme') === 'dark';
+
+                themeSwitch.addEventListener('change', function() {
+                    applyTheme(this.checked ? 'dark' : 'light');
+                });
+
+                if (!savedTheme) {
+                    const handleSystemChange = (event) => {
+                        const systemTheme = event.matches ? 'dark' : 'light';
+                        applyTheme(systemTheme, false);
+                        themeSwitch.checked = systemTheme === 'dark';
+                    };
+
+                    if (typeof prefersDark.addEventListener === 'function') {
+                        prefersDark.addEventListener('change', handleSystemChange);
+                    } else if (typeof prefersDark.addListener === 'function') {
+                        prefersDark.addListener(handleSystemChange);
+                    }
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Hub - News</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            const STORAGE_KEY = 'theme';
+            const prefersDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+            const savedTheme = localStorage.getItem(STORAGE_KEY);
+            const initialTheme = savedTheme || ((prefersDark && prefersDark.matches) ? 'dark' : 'light');
+
+            document.documentElement.setAttribute('data-theme', initialTheme);
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.svg" alt="Community Hub Logo">
+                <span>Community Hub</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html" class="active">News</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="businesses.html">Businesses</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" class="theme-switch">
+                <label for="theme-switch" class="theme-label">
+                    <span class="theme-icon">🌙</span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Community News</h1>
+                <p>Stay updated with the latest happenings in our community</p>
+            </div>
+        </section>
+
+        <!-- Image Carousel -->
+        <section class="carousel-section">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-slide slide1 active">
+                        <div class="carousel-content">
+                            <h2>Community Garden Opens</h2>
+                            <p>New season, new opportunities to grow together</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide slide2">
+                        <div class="carousel-content">
+                            <h2>Local Library Expansion</h2>
+                            <p>More books, more resources, more learning</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide slide3">
+                        <div class="carousel-content">
+                            <h2>Spring Festival Planning</h2>
+                            <p>Get ready for our biggest celebration of the year</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Accordion -->
+        <section class="news-section">
+            <div class="container">
+                <h2 class="section-title">Latest News Articles</h2>
+                
+                <div class="accordion">
+                    <input type="checkbox" id="accordion1" class="accordion-input">
+                    <label for="accordion1" class="accordion-label">
+                        <span class="accordion-title">Community Board Announces New Initiatives</span>
+                        <span class="accordion-icon">+</span>
+                    </label>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p><strong>Date:</strong> March 15, 2024</p>
+                            <p>The Community Board has unveiled several new initiatives aimed at improving neighborhood engagement and sustainability. These include a community recycling program, monthly neighborhood clean-up days, and an enhanced community garden project.</p>
+                            <p>Residents are encouraged to participate in upcoming planning meetings. The first meeting will be held at the Community Center on March 25th at 6 PM.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <input type="checkbox" id="accordion2" class="accordion-input">
+                    <label for="accordion2" class="accordion-label">
+                        <span class="accordion-title">Park Renovation Project Completed</span>
+                        <span class="accordion-icon">+</span>
+                    </label>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p><strong>Date:</strong> March 5, 2024</p>
+                            <p>After months of construction, the community park renovation is finally complete! The park now features new playground equipment, upgraded walking trails, new picnic areas, and improved lighting for evening activities.</p>
+                            <p>A grand reopening ceremony will be held this Saturday at 10 AM. All community members are invited to celebrate this milestone.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <input type="checkbox" id="accordion3" class="accordion-input">
+                    <label for="accordion3" class="accordion-label">
+                        <span class="accordion-title">Local Library Receives Grant for Digital Resources</span>
+                        <span class="accordion-icon">+</span>
+                    </label>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p><strong>Date:</strong> February 28, 2024</p>
+                            <p>Our local library has been awarded a $50,000 grant to expand digital resources and technology access. This funding will be used to upgrade computer labs, purchase new e-books, and offer digital literacy programs for all ages.</p>
+                            <p>Starting in April, the library will offer free computer classes and expanded access to online learning platforms.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <input type="checkbox" id="accordion4" class="accordion-input">
+                    <label for="accordion4" class="accordion-label">
+                        <span class="accordion-title">New Community Safety Program Launched</span>
+                        <span class="accordion-icon">+</span>
+                    </label>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p><strong>Date:</strong> February 20, 2024</p>
+                            <p>The Community Hub is launching a Neighborhood Watch program in partnership with local law enforcement. This program aims to increase community safety through awareness, communication, and collaboration.</p>
+                            <p>Volunteer training sessions will begin next month. Interested residents can sign up at the Community Center or online.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <input type="checkbox" id="accordion5" class="accordion-input">
+                    <label for="accordion5" class="accordion-label">
+                        <span class="accordion-title">Annual Spring Festival Date Announced</span>
+                        <span class="accordion-icon">+</span>
+                    </label>
+                    <div class="accordion-content">
+                        <div class="accordion-text">
+                            <p><strong>Date:</strong> February 15, 2024</p>
+                            <p>Mark your calendars! The Annual Spring Festival is scheduled for April 20th, 2024. This year's festival will feature local vendors, live music, food trucks, children's activities, and much more.</p>
+                            <p>Vendor applications are now open. If you're interested in participating, contact the Community Events Committee by March 10th.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Community Hub. All rights reserved.</p>
+            <p>Building stronger communities, one connection at a time.</p>
+        </div>
+    </footer>
+    <script>
+        // Theme toggle functionality - Initialize immediately
+        (function() {
+            const html = document.documentElement;
+            const STORAGE_KEY = 'theme';
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+            const savedTheme = localStorage.getItem(STORAGE_KEY);
+
+            const getSystemTheme = () => (prefersDark.matches ? 'dark' : 'light');
+
+            const applyTheme = (theme, persist = true) => {
+                html.setAttribute('data-theme', theme);
+                if (persist) {
+                    localStorage.setItem(STORAGE_KEY, theme);
+                }
+            };
+
+            applyTheme(savedTheme || getSystemTheme(), false);
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const themeSwitch = document.getElementById('theme-switch');
+
+                if (!themeSwitch) {
+                    return;
+                }
+
+                themeSwitch.checked = html.getAttribute('data-theme') === 'dark';
+
+                themeSwitch.addEventListener('change', function() {
+                    applyTheme(this.checked ? 'dark' : 'light');
+                });
+
+                if (!savedTheme) {
+                    const handleSystemChange = (event) => {
+                        const systemTheme = event.matches ? 'dark' : 'light';
+                        applyTheme(systemTheme, false);
+                        themeSwitch.checked = systemTheme === 'dark';
+                    };
+
+                    if (typeof prefersDark.addEventListener === 'function') {
+                        prefersDark.addEventListener('change', handleSystemChange);
+                    } else if (typeof prefersDark.addListener === 'function') {
+                        prefersDark.addListener(handleSystemChange);
+                    }
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

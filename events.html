@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Hub - Events</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            const STORAGE_KEY = 'theme';
+            const prefersDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+            const savedTheme = localStorage.getItem(STORAGE_KEY);
+            const initialTheme = savedTheme || ((prefersDark && prefersDark.matches) ? 'dark' : 'light');
+
+            document.documentElement.setAttribute('data-theme', initialTheme);
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.svg" alt="Community Hub Logo">
+                <span>Community Hub</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="events.html" class="active">Events</a></li>
+                    <li><a href="businesses.html">Businesses</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" class="theme-switch">
+                <label for="theme-switch" class="theme-label">
+                    <span class="theme-icon">🌙</span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Local Events</h1>
+                <p>Discover upcoming events in our community</p>
+            </div>
+        </section>
+
+        <section class="events-section">
+            <div class="container">
+                <div class="events-grid">
+                    <!-- Community Events -->
+                    <div class="event-card category-community">
+                        <div class="event-header">
+                            <span class="event-category">Community</span>
+                            <span class="event-date">Apr 20, 2024</span>
+                        </div>
+                        <h3 class="event-title">Annual Spring Festival</h3>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Community Park, Main Street</span>
+                        </div>
+                        <div class="event-description">
+                            <p>Join us for our biggest celebration of the year! Featuring local vendors, live music performances, food trucks, children's activities, and artisan markets. A day of fun for the whole family!</p>
+                            <p class="event-time"><strong>Time:</strong> 10:00 AM - 6:00 PM</p>
+                            <p class="event-details"><strong>Admission:</strong> Free</p>
+                        </div>
+                    </div>
+
+                    <!-- Educational Events -->
+                    <div class="event-card category-educational">
+                        <div class="event-header">
+                            <span class="event-category">Educational</span>
+                            <span class="event-date">Mar 25, 2024</span>
+                        </div>
+                        <h3 class="event-title">Digital Literacy Workshop</h3>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Community Library, Tech Lab</span>
+                        </div>
+                        <div class="event-description">
+                            <p>Learn essential digital skills including computer basics, internet safety, email management, and online communication. Perfect for beginners and those looking to enhance their digital confidence.</p>
+                            <p class="event-time"><strong>Time:</strong> 2:00 PM - 4:00 PM</p>
+                            <p class="event-details"><strong>Registration:</strong> Required (call 555-0123)</p>
+                        </div>
+                    </div>
+
+                    <!-- Sports Events -->
+                    <div class="event-card category-sports">
+                        <div class="event-header">
+                            <span class="event-category">Sports</span>
+                            <span class="event-date">Apr 5, 2024</span>
+                        </div>
+                        <h3 class="event-title">Community 5K Run</h3>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Riverside Park, Starting Line</span>
+                        </div>
+                        <div class="event-description">
+                            <p>Get active and support local charities! Our annual 5K run welcomes runners of all levels. Proceeds benefit community programs. Race includes medals, refreshments, and a post-race celebration.</p>
+                            <p class="event-time"><strong>Time:</strong> 8:00 AM - 10:00 AM</p>
+                            <p class="event-details"><strong>Registration Fee:</strong> $25 (includes t-shirt)</p>
+                        </div>
+                    </div>
+
+                    <!-- Cultural Events -->
+                    <div class="event-card category-cultural">
+                        <div class="event-header">
+                            <span class="event-category">Cultural</span>
+                            <span class="event-date">Mar 30, 2024</span>
+                        </div>
+                        <h3 class="event-title">Art Exhibition: Local Artists</h3>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Community Center, Gallery Hall</span>
+                        </div>
+                        <div class="event-description">
+                            <p>Explore the creative talents of our local artists. The exhibition features paintings, sculptures, photography, and mixed media works. Opening reception with artist meet-and-greet.</p>
+                            <p class="event-time"><strong>Time:</strong> 6:00 PM - 9:00 PM</p>
+                            <p class="event-details"><strong>Exhibition runs:</strong> March 30 - April 15</p>
+                        </div>
+                    </div>
+
+                    <!-- Social Events -->
+                    <div class="event-card category-social">
+                        <div class="event-header">
+                            <span class="event-category">Social</span>
+                            <span class="event-date">Apr 12, 2024</span>
+                        </div>
+                        <h3 class="event-title">Community Potluck Dinner</h3>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Community Center, Main Hall</span>
+                        </div>
+                        <div class="event-description">
+                            <p>Bring a dish to share and enjoy an evening of food, conversation, and connection with neighbors. Live acoustic music and activities for children. All are welcome!</p>
+                            <p class="event-time"><strong>Time:</strong> 5:30 PM - 8:00 PM</p>
+                            <p class="event-details"><strong>RSVP:</strong> Encouraged but not required</p>
+                        </div>
+                    </div>
+
+                    <!-- Business Events -->
+                    <div class="event-card category-business">
+                        <div class="event-header">
+                            <span class="event-category">Business</span>
+                            <span class="event-date">Apr 8, 2024</span>
+                        </div>
+                        <h3 class="event-title">Small Business Networking Event</h3>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Downtown Conference Center</span>
+                        </div>
+                        <div class="event-description">
+                            <p>Connect with local business owners, entrepreneurs, and professionals. Features guest speakers, networking opportunities, and resources for small business growth.</p>
+                            <p class="event-time"><strong>Time:</strong> 6:00 PM - 8:30 PM</p>
+                            <p class="event-details"><strong>Registration:</strong> Free for members, $15 for non-members</p>
+                        </div>
+                    </div>
+
+                    <!-- Educational Events -->
+                    <div class="event-card category-educational">
+                        <div class="event-header">
+                            <span class="event-category">Educational</span>
+                            <span class="event-date">Apr 15, 2024</span>
+                        </div>
+                        <h3 class="event-title">Gardening Workshop: Spring Planting</h3>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Community Garden</span>
+                        </div>
+                        <div class="event-description">
+                            <p>Learn about spring planting techniques, soil preparation, and seasonal crops. Hands-on demonstration and take-home starter plants included. Perfect for beginners!</p>
+                            <p class="event-time"><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
+                            <p class="event-details"><strong>Materials Fee:</strong> $10 (includes plants)</p>
+                        </div>
+                    </div>
+
+                    <!-- Community Events -->
+                    <div class="event-card category-community">
+                        <div class="event-header">
+                            <span class="event-category">Community</span>
+                            <span class="event-date">Mar 28, 2024</span>
+                        </div>
+                        <h3 class="event-title">Community Board Meeting</h3>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Community Center, Meeting Room A</span>
+                        </div>
+                        <div class="event-description">
+                            <p>Monthly meeting of the Community Board. Open to all residents. Agenda includes budget review, upcoming project updates, and open floor for community concerns and suggestions.</p>
+                            <p class="event-time"><strong>Time:</strong> 7:00 PM - 9:00 PM</p>
+                            <p class="event-details"><strong>Agenda:</strong> Available 3 days before meeting</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Community Hub. All rights reserved.</p>
+            <p>Building stronger communities, one connection at a time.</p>
+        </div>
+    </footer>
+    <script>
+        // Theme toggle functionality - Initialize immediately
+        (function() {
+            const html = document.documentElement;
+            const STORAGE_KEY = 'theme';
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+            const savedTheme = localStorage.getItem(STORAGE_KEY);
+
+            const getSystemTheme = () => (prefersDark.matches ? 'dark' : 'light');
+
+            const applyTheme = (theme, persist = true) => {
+                html.setAttribute('data-theme', theme);
+                if (persist) {
+                    localStorage.setItem(STORAGE_KEY, theme);
+                }
+            };
+
+            applyTheme(savedTheme || getSystemTheme(), false);
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const themeSwitch = document.getElementById('theme-switch');
+
+                if (!themeSwitch) {
+                    return;
+                }
+
+                themeSwitch.checked = html.getAttribute('data-theme') === 'dark';
+
+                themeSwitch.addEventListener('change', function() {
+                    applyTheme(this.checked ? 'dark' : 'light');
+                });
+
+                if (!savedTheme) {
+                    const handleSystemChange = (event) => {
+                        const systemTheme = event.matches ? 'dark' : 'light';
+                        applyTheme(systemTheme, false);
+                        themeSwitch.checked = systemTheme === 'dark';
+                    };
+
+                    if (typeof prefersDark.addEventListener === 'function') {
+                        prefersDark.addEventListener('change', handleSystemChange);
+                    } else if (typeof prefersDark.addListener === 'function') {
+                        prefersDark.addListener(handleSystemChange);
+                    }
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
+

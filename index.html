@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Hub - Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            const STORAGE_KEY = 'theme';
+            const prefersDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+            const savedTheme = localStorage.getItem(STORAGE_KEY);
+            const initialTheme = savedTheme || ((prefersDark && prefersDark.matches) ? 'dark' : 'light');
+
+            document.documentElement.setAttribute('data-theme', initialTheme);
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.svg" alt="Community Hub Logo">
+                <span>Community Hub</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="businesses.html">Businesses</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" class="theme-switch">
+                <label for="theme-switch" class="theme-label">
+                    <span class="theme-icon">🌙</span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to Community Hub</h1>
+                <p class="hero-subtitle">Your Gateway to Local Connections, Events, and Resources</p>
+                <div class="hero-buttons">
+                    <a href="events.html" class="btn btn-primary">Explore Events</a>
+                    <a href="businesses.html" class="btn btn-secondary">Find Businesses</a>
+                </div>
+            </div>
+            <div class="hero-decoration"></div>
+        </section>
+
+        <!-- Featured Sections -->
+        <section class="featured-section">
+            <div class="container">
+                <h2 class="section-title">Popular Spots</h2>
+                <div class="featured-grid">
+                    <div class="featured-card">
+                        <div class="featured-image">
+                            <div class="image-placeholder place1"></div>
+                        </div>
+                        <div class="featured-content">
+                            <h3>Community Garden</h3>
+                            <p>A vibrant green space where neighbors come together to grow fresh produce and build friendships.</p>
+                            <a href="news.html" class="btn btn-link">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="featured-card">
+                        <div class="featured-image">
+                            <div class="image-placeholder place2"></div>
+                        </div>
+                        <div class="featured-content">
+                            <h3>Local Library</h3>
+                            <p>Discover books, attend workshops, and access free resources for all ages at our community library.</p>
+                            <a href="resources.html" class="btn btn-link">Explore Resources</a>
+                        </div>
+                    </div>
+                    <div class="featured-card">
+                        <div class="featured-image">
+                            <div class="image-placeholder place3"></div>
+                        </div>
+                        <div class="featured-content">
+                            <h3>Community Center</h3>
+                            <p>Your hub for fitness classes, social gatherings, and community events throughout the year.</p>
+                            <a href="events.html" class="btn btn-link">View Events</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Announcements -->
+        <section class="announcements-section">
+            <div class="container">
+                <h2 class="section-title">Recent Announcements</h2>
+                <div class="announcements-grid">
+                    <div class="announcement-card">
+                        <div class="announcement-icon">📢</div>
+                        <h3>New Community Board Meeting</h3>
+                        <p>Join us this Thursday at 7 PM for our monthly community board meeting at the Community Center.</p>
+                        <span class="announcement-date">Posted: March 15, 2024</span>
+                    </div>
+                    <div class="announcement-card">
+                        <div class="announcement-icon">🎉</div>
+                        <h3>Spring Festival 2024</h3>
+                        <p>Mark your calendars! Our annual Spring Festival is coming up on April 20th with food, music, and fun.</p>
+                        <span class="announcement-date">Posted: March 10, 2024</span>
+                    </div>
+                    <div class="announcement-card">
+                        <div class="announcement-icon">🔧</div>
+                        <h3>Park Renovation Update</h3>
+                        <p>Phase 2 of the park renovation is complete. New playground equipment and walking trails are now open!</p>
+                        <span class="announcement-date">Posted: March 5, 2024</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Community Hub. All rights reserved.</p>
+            <p>Building stronger communities, one connection at a time.</p>
+        </div>
+    </footer>
+    <script>
+        // Theme toggle functionality - Initialize immediately
+        (function() {
+            const html = document.documentElement;
+            const STORAGE_KEY = 'theme';
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+            const savedTheme = localStorage.getItem(STORAGE_KEY);
+
+            const getSystemTheme = () => (prefersDark.matches ? 'dark' : 'light');
+
+            const applyTheme = (theme, persist = true) => {
+                html.setAttribute('data-theme', theme);
+                if (persist) {
+                    localStorage.setItem(STORAGE_KEY, theme);
+                }
+            };
+
+            applyTheme(savedTheme || getSystemTheme(), false);
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const themeSwitch = document.getElementById('theme-switch');
+
+                if (!themeSwitch) {
+                    return;
+                }
+
+                themeSwitch.checked = html.getAttribute('data-theme') === 'dark';
+
+                themeSwitch.addEventListener('change', function() {
+                    applyTheme(this.checked ? 'dark' : 'light');
+                });
+
+                if (!savedTheme) {
+                    const handleSystemChange = (event) => {
+                        const systemTheme = event.matches ? 'dark' : 'light';
+                        applyTheme(systemTheme, false);
+                        themeSwitch.checked = systemTheme === 'dark';
+                    };
+
+                    if (typeof prefersDark.addEventListener === 'function') {
+                        prefersDark.addEventListener('change', handleSystemChange);
+                    } else if (typeof prefersDark.addListener === 'function') {
+                        prefersDark.addListener(handleSystemChange);
+                    }
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

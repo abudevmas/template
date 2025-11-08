@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Hub - Resources</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            const STORAGE_KEY = 'theme';
+            const prefersDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+            const savedTheme = localStorage.getItem(STORAGE_KEY);
+            const initialTheme = savedTheme || ((prefersDark && prefersDark.matches) ? 'dark' : 'light');
+
+            document.documentElement.setAttribute('data-theme', initialTheme);
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.svg" alt="Community Hub Logo">
+                <span>Community Hub</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="businesses.html">Businesses</a></li>
+                    <li><a href="resources.html" class="active">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" class="theme-switch">
+                <label for="theme-switch" class="theme-label">
+                    <span class="theme-icon">🌙</span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Resource Center</h1>
+                <p>Access important resources for community members</p>
+            </div>
+        </section>
+
+        <section class="resources-section">
+            <div class="container">
+                <div class="tabs">
+                    <input type="radio" id="tab1" name="tabs" checked>
+                    <label for="tab1" class="tab-label">Government Services</label>
+                    
+                    <input type="radio" id="tab2" name="tabs">
+                    <label for="tab2" class="tab-label">Education</label>
+                    
+                    <input type="radio" id="tab3" name="tabs">
+                    <label for="tab3" class="tab-label">Health & Wellness</label>
+                    
+                    <input type="radio" id="tab4" name="tabs">
+                    <label for="tab4" class="tab-label">Emergency Services</label>
+                    
+                    <input type="radio" id="tab5" name="tabs">
+                    <label for="tab5" class="tab-label">Community Support</label>
+
+                    <!-- Government Services Tab -->
+                    <div class="tab-content" id="content1">
+                        <h2>Government Services</h2>
+                        <div class="resource-grid">
+                            <div class="resource-item">
+                                <h3>City Hall</h3>
+                                <p><strong>Address:</strong> 100 City Center Plaza</p>
+                                <p><strong>Phone:</strong> (555) 100-0000</p>
+                                <p><strong>Services:</strong> Building permits, business licenses, voter registration, public records</p>
+                                <p><strong>Hours:</strong> Mon-Fri 8AM-5PM</p>
+                            </div>
+                            <div class="resource-item">
+                                <h3>Public Works Department</h3>
+                                <p><strong>Address:</strong> 200 Service Road</p>
+                                <p><strong>Phone:</strong> (555) 100-0001</p>
+                                <p><strong>Services:</strong> Road maintenance, water services, waste management, utilities</p>
+                                <p><strong>Hours:</strong> Mon-Fri 7AM-4PM</p>
+                            </div>
+                            <div class="resource-item">
+                                <h3>Parks & Recreation</h3>
+                                <p><strong>Address:</strong> 300 Park Avenue</p>
+                                <p><strong>Phone:</strong> (555) 100-0002</p>
+                                <p><strong>Services:</strong> Park reservations, recreation programs, facility rentals</p>
+                                <p><strong>Hours:</strong> Mon-Fri 9AM-6PM, Sat 9AM-2PM</p>
+                            </div>
+                            <div class="resource-item">
+                                <h3>Planning Department</h3>
+                                <p><strong>Address:</strong> 100 City Center Plaza, 2nd Floor</p>
+                                <p><strong>Phone:</strong> (555) 100-0003</p>
+                                <p><strong>Services:</strong> Zoning information, development permits, land use planning</p>
+                                <p><strong>Hours:</strong> Mon-Fri 8AM-5PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Tab -->
+                    <div class="tab-content" id="content2">
+                        <h2>Education Resources</h2>
+                        <div class="resource-grid">
+                            <div class="resource-item">
+                                <h3>Community Library</h3>
+                                <p><strong>Address:</strong> 500 Library Lane</p>
+                                <p><strong>Phone:</strong> (555) 100-0004</p>
+                                <p><strong>Services:</strong> Books, e-books, computer access, study rooms, workshops</p>
+                                <p><strong>Hours:</strong> Mon-Thu 9AM-8PM, Fri-Sat 9AM-6PM, Sun 12PM-5PM</p>
+                            </div>
+                            <div class="resource-item">
+                                <h3>Adult Education Center</h3>
+                                <p><strong>Address:</strong> 600 Education Drive</p>
+                                <p><strong>Phone:</strong> (555) 100-0005</p>
+                                <p><strong>Services:</strong> GED preparation, ESL classes, computer literacy, job training</p>
+                                <p><strong>Hours:</strong> Mon-Fri 8AM-8PM, Sat 9AM-2PM</p>
+                            </div>
+                            <div class="resource-item">
+                                <h3>School District Office</h3>
+                                <p><strong>Address:</strong> 700 School Street</p>
+                                <p><strong>Phone:</strong> (555) 100-0006</p>
+                                <p><strong>Services:</strong> Enrollment, student records, special programs, parent resources</p>
+                                <p><strong>Hours:</strong> Mon-Fri 7:30AM-4:30PM</p>
+                            </div>
+                            <div class="resource-item">
+                                <h3>Community College</h3>
+                                <p><strong>Address:</strong> 800 College Boulevard</p>
+                                <p><strong>Phone:</strong> (555) 100-0007</p>
+                                <p><strong>Services:</strong> Degree programs, continuing education, workforce development</p>
+                                <p><strong>Hours:</strong> Mon-Fri 8AM-6PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Health & Wellness Tab -->
+                    <div class="tab-content" id="content3">
+                        <h2>Health & Wellness</h2>
+                        <div class="resource-grid">
+                            <div class="resource-item">
+                                <h3>Community Health Clinic</h3>
+                                <p><strong>Address:</strong> 900 Health Way</p>
+                                <p><strong>Phone:</strong> (555) 100-0008</p>
+                                <p><strong>Services:</strong> Primary care, immunizations, health screenings, wellness programs</p>
+                                <p><strong>Hours:</strong> Mon-Fri 8AM-6PM, Sat 9AM-1PM</p>
+                            </div>
+                            <div class="resource-item">
+                                <h3>Mental Health Services</h3>
+                                <p><strong>Address:</strong> 950 Wellness Center</p>
+                                <p><strong>Phone:</strong> (555) 100-0009</p>
+                                <p><strong>Services:</strong> Counseling, support groups, crisis intervention, therapy referrals</p>
+                                <p><strong>Hours:</strong> Mon-Fri 9AM-7PM</p>
+                            </div>
+                            <div class="resource-item">
+                                <h3>Senior Services Center</h3>
+                                <p><strong>Address:</strong> 850 Senior Lane</p>
+                                <p><strong>Phone:</strong> (555) 100-0010</p>
+                                <p><strong>Services:</strong> Meal programs, transportation, activities, health services</p>
+                                <p><strong>Hours:</strong> Mon-Fri 8AM-5PM</p>
+                            </div>
+                            <div class="resource-item">
+                                <h3>Fitness & Recreation</h3>
+                                <p><strong>Address:</strong> 300 Park Avenue (Community Center)</p>
+                                <p><strong>Phone:</strong> (555) 100-0011</p>
+                                <p><strong>Services:</strong> Fitness classes, gym access, swimming pool, sports facilities</p>
+                                <p><strong>Hours:</strong> Mon-Fri 6AM-10PM, Sat-Sun 7AM-8PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Services Tab -->
+                    <div class="tab-content" id="content4">
+                        <h2>Emergency Services</h2>
+                        <div class="resource-grid">
+                            <div class="resource-item emergency">
+                                <h3>Emergency (Police, Fire, Medical)</h3>
+                                <p><strong>Emergency Number:</strong> 911</p>
+                                <p><strong>Non-Emergency Police:</strong> (555) 911-0001</p>
+                                <p><strong>Non-Emergency Fire:</strong> (555) 911-0002</p>
+                                <p><strong>Location:</strong> Available 24/7</p>
+                            </div>
+                            <div class="resource-item">
+                                <h3>Police Department</h3>
+                                <p><strong>Address:</strong> 110 Safety Drive</p>
+                                <p><strong>Phone:</strong> (555) 911-0001</p>
+                                <p><strong>Services:</strong> Crime reporting, safety tips, community policing programs</p>
+                                <p><strong>Hours:</strong> 24/7</p>
+                            </div>
+                            <div class="resource-item">
+                                <h3>Fire Department</h3>
+                                <p><strong>Address:</strong> 120 Fire Station Road</p>
+                                <p><strong>Phone:</strong> (555) 911-0002</p>
+                                <p><strong>Services:</strong> Fire safety inspections, smoke detector programs, fire prevention education</p>
+                                <p><strong>Hours:</strong> 24/7</p>
+                            </div>
+                            <div class="resource-item">
+                                <h3>Emergency Management</h3>
+                                <p><strong>Address:</strong> 100 City Center Plaza</p>
+                                <p><strong>Phone:</strong> (555) 911-0003</p>
+                                <p><strong>Services:</strong> Disaster preparedness, emergency planning, alerts and notifications</p>
+                                <p><strong>Hours:</strong> Mon-Fri 8AM-5PM (Emergency: 24/7)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Community Support Tab -->
+                    <div class="tab-content" id="content5">
+                        <h2>Community Support</h2>
+                        <div class="resource-grid">
+                            <div class="resource-item">
+                                <h3>Food Bank</h3>
+                                <p><strong>Address:</strong> 130 Hope Street</p>
+                                <p><strong>Phone:</strong> (555) 100-0012</p>
+                                <p><strong>Services:</strong> Food distribution, nutrition programs, meal assistance</p>
+                                <p><strong>Hours:</strong> Mon-Fri 9AM-4PM, Sat 9AM-12PM</p>
+                            </div>
+                            <div class="resource-item">
+                                <h3>Housing Assistance</h3>
+                                <p><strong>Address:</strong> 140 Home Avenue</p>
+                                <p><strong>Phone:</strong> (555) 100-0013</p>
+                                <p><strong>Services:</strong> Rental assistance, housing programs, affordable housing resources</p>
+                                <p><strong>Hours:</strong> Mon-Fri 8AM-5PM</p>
+                            </div>
+                            <div class="resource-item">
+                                <h3>Legal Aid Services</h3>
+                                <p><strong>Address:</strong> 150 Justice Way</p>
+                                <p><strong>Phone:</strong> (555) 100-0014</p>
+                                <p><strong>Services:</strong> Free legal consultations, tenant rights, family law assistance</p>
+                                <p><strong>Hours:</strong> Mon-Thu 9AM-5PM</p>
+                            </div>
+                            <div class="resource-item">
+                                <h3>Community Volunteer Center</h3>
+                                <p><strong>Address:</strong> 160 Volunteer Drive</p>
+                                <p><strong>Phone:</strong> (555) 100-0015</p>
+                                <p><strong>Services:</strong> Volunteer opportunities, community service programs, matching services</p>
+                                <p><strong>Hours:</strong> Mon-Fri 9AM-6PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Community Hub. All rights reserved.</p>
+            <p>Building stronger communities, one connection at a time.</p>
+        </div>
+    </footer>
+    <script>
+        // Theme toggle functionality - Initialize immediately
+        (function() {
+            const html = document.documentElement;
+            const STORAGE_KEY = 'theme';
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+            const savedTheme = localStorage.getItem(STORAGE_KEY);
+
+            const getSystemTheme = () => (prefersDark.matches ? 'dark' : 'light');
+
+            const applyTheme = (theme, persist = true) => {
+                html.setAttribute('data-theme', theme);
+                if (persist) {
+                    localStorage.setItem(STORAGE_KEY, theme);
+                }
+            };
+
+            applyTheme(savedTheme || getSystemTheme(), false);
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const themeSwitch = document.getElementById('theme-switch');
+
+                if (!themeSwitch) {
+                    return;
+                }
+
+                themeSwitch.checked = html.getAttribute('data-theme') === 'dark';
+
+                themeSwitch.addEventListener('change', function() {
+                    applyTheme(this.checked ? 'dark' : 'light');
+                });
+
+                if (!savedTheme) {
+                    const handleSystemChange = (event) => {
+                        const systemTheme = event.matches ? 'dark' : 'light';
+                        applyTheme(systemTheme, false);
+                        themeSwitch.checked = systemTheme === 'dark';
+                    };
+
+                    if (typeof prefersDark.addEventListener === 'function') {
+                        prefersDark.addEventListener('change', handleSystemChange);
+                    } else if (typeof prefersDark.addListener === 'function') {
+                        prefersDark.addListener(handleSystemChange);
+                    }
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
+
